@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>| Stop when you are Finished |</title>
+    <!-- <link href="/public/style.css" rel="stylesheet" type="text/css"/> -->
+    <!-- <link href="/public/assets/style.css" rel="stylesheet" type="text/css" /> -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./todo-list.js"></script>
+  </head>
+  <body>
+      <style>
+        body{
+            background: #0d1521;
+            font-family: tahoma;
+            color: #989898;
+        }
+
+        #todo-table{
+            position: relative;
+            width: 95%;
+            background: #090d13;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #todo-table form:after{
+            margin: 0;
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        input[type="text"]{
+            width: 60%;
+            padding: 20px;
+            background:#181c22;
+            border: 0;
+            float: left;
+            font-size: 20px;
+            color: #989898;
+        }
+
+        button{
+            padding: 20px;
+            width: 30%;
+            float: left;
+            background: #23282e;
+            border: 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: arial;
+            font-size: 20px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        li:hover{
+            text-decoration: line-through;
+            background: rgba(95, 95, 95, 0.2);
+            color: rgba(255, 60, 60, 0.61);
+        }
+
+        h1{
+            background: url(/logo2.png) no-repeat center;
+            margin-bottom: 0;
+            text-indent: -10000px;
+            opacity: 1.0;
+        }
+
+        </style>
+        <h1>hi</h1>
+    <div id="todo-table">
+      <form method="POST" action="/todo">
+        <input type="text" name="item" placeholder="Whats Next..." required />
+        <button class="btn-primary"type="submit"><i class="fa fa-plus px-3" aria-hidden="true"></i>Add Item</button>
+      </form>
+      <ul>
+          <% todos.forEach((element,ind) => { %>
+        <li><%=element.item%><i class="fa fa-trash px-3 float-right" aria-hidden="true"></i></li>
+        <%  });%>
+        <li>Item 1<i class="fa fa-pencil px-3 float-right" aria-hidden="true"></i></li>
+        <li>Item 2<i class="fa fa-paint-brush px-3 float-right" aria-hidden="true"></i></li>
+        <li>Item 3<i class="fa fa-truck px-3 float-right" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+    <div class="footer bg-dark mr-auto container-fluid fixed-bottom ">
+      <p class="text-center px-3 mr-auto">Thank You for Visiting</p>
+      <p class="text-right px-3 mr-auto">Developed by- Rishab Mangal</p>
+      <p class="text-right text-weight-light px-3 mr-auto">Version 1.0.0</p>
+      </div>
+  </body>
+</html>
