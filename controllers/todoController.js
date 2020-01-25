@@ -41,8 +41,7 @@ var urlencoded = bodyParser.urlencoded({ extended: false });
 // });
 
 var MongoClient = require("mongodb").MongoClient;
-var url =
-  "mongodb+srv://test:test@todo-gizyq.mongodb.net/test?retryWrites=true&w=majority";
+var url ="mongodb+srv://test:test@todo-gizyq.mongodb.net/test?retryWrites=true&w=majority";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
@@ -54,10 +53,7 @@ MongoClient.connect(url, function(err, db) {
   //     console.log("1 document inserted"+res.insertedCount);
   //     db.close();
   //   });
-  dbo
-    .collection("todo-list")
-    .find({})
-    .toArray(function(err, res) {
+  dbo.collection("todo-list").find({}).toArray(function(err, res) {
       if (err) throw err;
       console.log("List of All Items:");
       console.log(res);
