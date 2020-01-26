@@ -12,139 +12,124 @@
       rel="stylesheet"
       type="text/css"
     />
-<script src="https://kit.fontawesome.com/3b34b0b54f.js" crossorigin="anonymous"></script>
+    
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       rel="stylesheet"
       type="text/css"
     />
-
+    
     <script
       src="https://code.jquery.com/jquery-1.12.4.js"
       integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
       crossorigin="anonymous"
     ></script>
     <script src="./todo-list.js"></script>
+    <script src="https://kit.fontawesome.com/3b34b0b54f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <style>
-      body {
-        background: #0d1521;
-        font-family: tahoma;
-        color: #989898;
-      }
+      <style>
+        body{
+            background: #0d1521;
+            font-family: tahoma;
+            color: #989898;
+        }
 
-      #todo-table {
-        position: relative;
-        width: 95%;
-        background: #090d13;
-        margin: 0 auto;
-        padding: 20px;
-        box-sizing: border-box;
-      }
+        #todo-table{
+            position: relative;
+            width: 95%;
+            background: #090d13;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-      #todo-table form:after {
-        margin: 0;
-        content: "";
-        display: block;
-        clear: both;
-      }
+        #todo-table form:after{
+            margin: 0;
+            content: '';
+            display: block;
+            clear: both;
+        }
 
-      input[type="text"] {
-        width: 60%;
-        padding: 20px;
-        background: #181c22;
-        border: 0;
-        float: left;
-        font-size: 20px;
-        color: #989898;
-      }
+        input[type="text"]{
+            width: 60%;
+            padding: 20px;
+            background:#181c22;
+            border: 0;
+            float: left;
+            font-size: 20px;
+            color: #989898;
+        }
 
-      /* button {
-        padding: 19px;
-        width: 10%;
-        float: left;
-        background: #23282e;
-        border: 0;
-        box-sizing: border-box;
-        color: #fff;
-        cursor: pointer;
-        font-size: 20px;
-      } */
+        /* button{
+            padding: 20px;
+            width: 10%;
+            float: left;
+            background: #23282e;
+            border: 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+        } */
 
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-      li {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        font-family: arial;
-        font-size: 20px;
-        cursor: pointer;
-        letter-spacing: 1px;
-      }
+        li{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: arial;
+            font-size: 20px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
 
-      li:hover {
-        text-decoration: line-through;
-        background: rgba(95, 95, 95, 0.2);
-        color: rgba(255, 60, 60, 0.61);
-      }
+        li:hover{
+            text-decoration: line-through;
+            background: rgba(95, 95, 95, 0.2);
+            color: rgba(255, 60, 60, 0.61);
+        }
 
-      h1 {
-        background: url(logo.png) no-repeat center;
-        margin-bottom: 0;
-        text-indent: -10000px;
-        opacity: 1;
-      }
-    </style>
-    <h1>hi</h1>
+        h1{
+            background: url(/logo.png) no-repeat center;
+            margin-bottom: 0;
+            text-indent: -10000px;
+            opacity: 1.0;
+        }
+
+        </style>
+        <h1>hi</h1>
     <div id="todo-table">
       <form method="POST" action="/todo">
         <input type="text" name="item" placeholder="Whats Next..." required />
-        <button class="btn btn-primary p-3" type="submit">
-          <i class="fa fa-plus px-3" aria-hidden="true"></i>Add Item
-        </button>
+        <button class="btn btn-primary p-3"type="submit"><i class="fa fa-plus px-3" aria-hidden="true"></i>Add Item</button>
       </form>
       <ul>
-        <% todos.forEach((element,ind) => { %>
-        <li>
-          <%=ind+1%>.
-          <%=element.item%><i
-            class="fa fa-trash px-3 float-right"
-            aria-hidden="true"
-          ></i>
-        </li>
-        <% });%>
-        <!-- <li>
-          Item 1<i class="fa fa-pencil px-3 float-right" aria-hidden="true"></i>
-        </li>
-        <li>
-          Item 2<i
-            class="fa fa-paint-brush px-3 float-right"
-            aria-hidden="true"
-          ></i>
-        </li>
-        <li>
-          Item 3<i class="fa fa-truck px-3 float-right" aria-hidden="true"></i>
-        </li> -->
+          <% todos.forEach((element,ind) => { %>
+        <li><%=element.item%><i class="fa fa-trash px-3 float-right" aria-hidden="true"></i></li>
+        <%  });%>
+        <!-- <li>Item 1<i class="fa fa-pencil px-3 float-right" aria-hidden="true"></i></li>
+        <li>Item 2<i class="fa fa-paint-brush px-3 float-right" aria-hidden="true"></i></li>
+        <li>Item 3<i class="fa fa-truck px-3 float-right" aria-hidden="true"></i></li> -->
       </ul>
     </div>
-    <div class="footer bg-dark mr-auto container-fluid  ">
+    <div class="footer bg-dark mr-auto container-fluid">
       <p class="text-center px-3 mr-auto">Thank You for Visiting</p>
       <p class="text-right px-3 mr-auto">Developed by- Rishab Mangal</p>
-      <a href="https://github.com/RishabMangal"><i class="fab fa-git text-left px-1 mr-auto" style="position: 'relative', left= 0"></i></a>            
+      <a href="https://github.com/RishabMangal"><i class="fab fa-git text-left px-1 mr-auto" style=" position: 'relative', left= 0 "></i></a>            
       <a href="mailto:rishabhmangal1@gmail.com?subject=Awesome App"><i class="fas fa-envelope text-left px-1 mr-auto" style="position: 'relative',left=40"></i></a>         
       <a href="https://www.linkedin.com/in/rishab-m-00b60a103/"><i class="fab fa-linkedin text-left px-1 mr-auto" style="position: 'relative',left=80"></i></a>        
-      <a href="https://api.whatsapp.com/send?phone=9928799243&text=Hello"><i class="fab fa-whatsapp text-left px-1 mr-auto" style="position: 'relative', left= 120"></i></a>
-      <a href="https://www.facebook.com/rishabh.mangal.77"><i class="fab fa-facebook text-left px-1 mr-auto" style="position: 'relative', left=160"></i></a>
-      <a href="https://www.instagram.com/rishabhmangal1/"><i class="fab fa-instagram text-left px-1 mr-auto" style="position: 'relative', left=200"></i></a>
-      <a href="https://github.com/RishabMangal"><i class="fab fa-github text-left px-1 mr-auto" style="position: 'relative', left=240"></i></a>
-      <a href="https://www.github.com"><i class="fab fa-google-plus text-left px-1 mr-auto" style="position: 'relative', left= 280"></i></a>            
+      <a href="https://api.whatsapp.com/send?phone=9928799243&text=Hello"><i class="fab fa-whatsapp text-left px-1 mr-auto" style=" position: 'relative', left=120 "></i></a>
+      <a href="https://www.facebook.com/rishabh.mangal.77"><i class="fab fa-facebook text-left px-1 mr-auto" style=" position: 'relative', left= 160 "></i></a>
+      <a href="https://www.instagram.com/rishabhmangal1/"><i class="fab fa-instagram text-left px-1 mr-auto" style=" position: 'relative', left=200 "></i></a>
+      <a href="https://github.com/RishabMangal"><i class="fab fa-github text-left px-1 mr-auto" style=" position: 'relative', left= 240 "></i></a>
+      <a href="https://www.github.com"><i class="fab fa-google-plus text-left px-1 mr-auto" style=" position: 'relative', left= 280"></i></a>            
       <p class="text-right text-weight-light px-3 mr-auto">Version 1.0.0</p>
-    </div>
+      </div>
   </body>
 </html>
