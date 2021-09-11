@@ -10,7 +10,7 @@ app.use(express.static('views'))
 
 todoController(app)
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 // var code="<button onclick=\"console.log('Fuck yeah!!');req.url=res.url+'/todo';\">Click Me</button>"
 var code =
